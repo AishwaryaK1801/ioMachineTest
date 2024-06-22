@@ -1,0 +1,19 @@
+<form #todoForm="ngForm" (ngSubmit)="onFormSubmit()">
+    <div class="form-group">
+        <label for="todo"> Enter Todo Item</label>
+        <input type="text"
+         name="todo" 
+         id="todo"
+         class="form-control mb-3"
+         ngModel
+         #todoItem="ngModel"
+         required
+         >
+         <span *ngIf="todoItem.touched && todoItem.hasError('required')">
+            Todo item is required field!  Please Enter Todo Item 
+         </span>
+    </div>
+    <button class="btn btn-block btn-sm btn-primary">
+        Add Todo
+    </button>
+</form>
